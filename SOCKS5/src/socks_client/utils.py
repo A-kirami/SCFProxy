@@ -12,7 +12,7 @@ def print_time(data):
 
 
 def parse_error(errmsg):
-    print("Usage: python " + sys.argv[0] + " [Options] use -h or --help for help")
+    print(f"Usage: python {sys.argv[0]} [Options] use -h or --help for help")
     sys.exit()
 
 
@@ -46,8 +46,7 @@ def parse_args():
     )
     parser.add_argument("--user", type=str, help="Authentication username")
     parser.add_argument("--passwd", type=str, help="Authentication password")
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 
 def cancel_task(msg):
