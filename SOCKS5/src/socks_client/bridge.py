@@ -30,8 +30,6 @@ async def socks5_forward(client: Conn, target: Conn):
                 print(e)
             except ConnectionResetError:
                 print_time(f"{src.add} sends a ConnectionReset")
-                pass
-
             await asyncio.sleep(0.01)
 
     tasks = [forward(client, target), forward(target, client)]

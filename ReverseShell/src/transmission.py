@@ -105,9 +105,6 @@ def main_handler(event, context):
 
     is_current_user = connectionIDs.pop(current_connectionID)
     for ID, is_user in connectionIDs.items():
-        if is_current_user:
+        if is_current_user or is_user:
             send(ID, data)
-        elif is_user:
-            send(ID, data)
-
     return "send success"
